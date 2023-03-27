@@ -3,7 +3,7 @@
 }
 
 .image {
-    max-width: 300px;
+    max-width: 400px;
     transition: all 0.2s ease-in-out;
 }
 
@@ -11,6 +11,10 @@
     transform: scale(1.1);
     z-index: 999;
     cursor: zoom-in;
+}
+
+a {
+    text-decoration: none;
 }
 
 .a_div {
@@ -25,7 +29,6 @@
 .scroll-link,
 .scroll-link:active,
 .scroll-link:focus {
-    text-decoration: none;
     color: black;
     font-size: 24px;
 }
@@ -39,7 +42,7 @@
 
 .directory li {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 10px;
     border-bottom: 1px solid #eee;
     transition: background-color 0.2s ease;
 

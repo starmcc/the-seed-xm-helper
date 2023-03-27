@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheSeed起源塔小梦工具</title>
     <link type="text/css" rel="styleSheet" href="css/index.css">
@@ -18,10 +19,12 @@
         <li><a href="#h24" class="scroll-link">24层</a></li>
         <li><a href="#h27" class="scroll-link">27层</a></li>
         <li><a href="#h39" class="scroll-link">39层</a></li>
+        </br>
         <li><a href="#h42" class="scroll-link">42层</a></li>
     </ul>
-    <h1>作者：童年小梦</h1>
-    <h4>制作不易，请勿删除此行信息，小梦交流群：1063292221</h4>
+    <img src="logo.png"></img>
+    <h3><a href="https://www.qstms.com/">作者：童年小梦</a></h3>
+    <p>小梦交流QQ群：1063292221</p>
     <div class="img-container">
         <div class="fullscreen-overlay">
             <img class="fullscreen-img" src="">
@@ -42,6 +45,7 @@
     <div>
         <h3 id="h24">24层：听歌识曲</h3>
         <audio loop controls id="audio_bgm" src="bgm/1.mp3"></audio>
+        <p style="font-size:8px; color: brown;">点下方地图名时自动播放和复制</p>
         <div style="margin: 2px">
             <button onclick="btnClick(1,this)">弓箭手村</button>
             <button onclick="btnClick(2,this)">天空之城</button>
@@ -78,36 +82,53 @@
             <button onclick="btnClick(25,this)">櫻花處</button>
         </div>
         <div>
-            <h3 id="h27">27层：滿滿的陷阱</h3>
-            <img class="image" src="images/27.jpg"></img>
+            <p style="font-size:8px; color: green;">
+                <a href="https://forum.gamer.com.tw/C.php?bsn=7650&snA=1022847&tnum=1">
+                    内容来源巴哈
+                </a>
+            </p>
+            <p style="font-size:8px; color: brown;">输入提示后Enter查询答案 可使用拼音首字母/简体/繁体搜索 并自动复制地图名</p>
+            提示：
+            <input type="text" id="tipsInput" style="margin-right: 1px;" />
+            <button onclick="searchTips()">查询</button>
+            <button onclick="tipsInit(true)">清除</button>
+            <input type="hidden" id="tipsJson" />
         </div>
-        <div style="min-height: 300px;">
-            <h3 id="h39">39层：答题</h3>
-            <div>
-                <p style="font-size:8px; color: brown;">输入问题后Enter查询答案</p>
-                <p style="font-size:8px; color: brown;">可使用拼音首字母/简体/繁体搜索</p>
-                <div>
-                    问题：
-                    <input type="text" id="qName" style="margin-right: 1px;" />
-                    <button onclick="queryQa()">查询</button>
-                    <button onclick="qaInit(true)">清除</button>
-                </div>
-            </div>
-            <div id="qaData"></div>
+        <div id="tipsData" style="min-height: 100px;"></div>
+    </div>
+    <div>
+        <h3 id="h27">27层：滿滿的陷阱</h3>
+        <img class="image" src="images/27.jpg"></img>
+    </div>
+    <div>
+        <h3 id="h39">39层：答题</h3>
+        <div>
+            <p style="font-size:8px; color: green;">
+                <a href="https://forum.gamer.com.tw/C.php?bsn=7650&snA=1020603&tnum=7">
+                    题库来源巴哈
+                </a>
+            </p>
+            <p style="font-size:8px; color: brown;">输入问题后Enter查询答案 可使用拼音首字母/简体/繁体搜索</p>
+            问题：
+            <input type="text" id="qName" style="margin-right: 1px;" />
+            <button onclick="queryQa()">查询</button>
+            <button onclick="qaInit(true)">清除</button>
             <input type="hidden" id="qaJson" />
         </div>
-        <div>
-            <h3 id="h42">42层：打小怪各30只</h3>
-            <img class="image" src="images/42.1.png"></img>
-            </br>
-            <img class="image" src="images/42.png"></img>
-        </div>
+        <div id="qaData" style="min-height: 300px;"></div>
+    </div>
+    <div>
+        <h3 id="h42">42层：打小怪各30只</h3>
+        <img class="image" src="images/42.1.png"></img>
+        </br>
+        <img class="image" src="images/42.png"></img>
     </div>
 
 </body>
 <script src="js/Convert_Pinyin.js"></script>
 <script src="js/init.js"></script>
-<script src="js/qa.js"></script>
+<script src="js/qaData.js"></script>
+<script src="js/tipsData.js"></script>
 <script src="js/index.js"></script>
 
 </html>

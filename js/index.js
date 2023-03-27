@@ -1,3 +1,51 @@
+const tipsJson = document.getElementById('tipsJson').data
+
+function tipsInit(clearInput) {
+    let input = document.getElementById('tipsInput')
+    if (clearInput) {
+        input.value = ''
+    }
+    let div = document.getElementById('tipsData')
+    div.innerHTML = ''
+    return {
+        div,
+        value: traditionalized(input.value)
+    }
+}
+
+function searchTips() {
+    let tipsData = tipsInit(false)
+    let div = tipsData.div
+    if (tipsData.value === '') {
+        div.innerHTML = '<p style="color: red;">暂无结果</p>'
+        return
+    }
+    let searchStatus = false
+    for (const tips of tipsJson) {
+        let is = searchByInitials(tipsData.value, tips.tips) || tips.tips.indexOf(tipsData.value) != -1
+        if (!is) {
+            continue
+        }
+        searchStatus = true
+        let h3 = document.createElement('h3')
+        h3.innerText = tips.map
+        div.appendChild(h3)
+        let p1 = document.createElement('p')
+        p1.innerText = tips.tips
+        div.appendChild(p1)
+        // 复制地图名
+        copyData(tips.map)
+        break
+    }
+
+    if (!searchStatus) {
+        div.innerHTML = '<p style="color: red;">暂无结果</p>'
+        return
+    }
+}
+
+
+
 const qaJson = document.getElementById('qaJson').data
 
 document.getElementById('qName').addEventListener('keydown', event => {
@@ -27,12 +75,13 @@ function queryQa() {
         div.innerHTML = '<p style="color: red;">暂无结果</p>'
         return
     }
-
+    let searchStatus = false
     for (const qa of qaJson) {
         let is = searchByInitials(qaData.value, qa.q) || qa.q.indexOf(qaData.value) != -1
         if (!is) {
             continue
         }
+        searchStatus = true
         let p1 = document.createElement('p')
         p1.innerText = qa.q
         div.appendChild(p1)
@@ -56,6 +105,11 @@ function queryQa() {
         div.appendChild(document.createElement('hr'))
 
     }
+
+    if (!searchStatus) {
+        div.innerHTML = '<p style="color: red;">暂无结果</p>'
+        return
+    }
 }
 
 
@@ -63,14 +117,7 @@ function btnClick(num, th) {
     let audio = document.getElementById("audio_bgm")
     audio.src = "bgm/" + num + ".mp3"
     audio.play()
-    const input = document.createElement('input')
-    input.setAttribute('readonly', 'readonly')
-    input.setAttribute('value', th.innerText)
-    document.body.appendChild(input)
-    input.setSelectionRange(0, 9999)
-    input.select()
-    document.execCommand('copy')
-    document.body.removeChild(input)
+    copyData(th.innerText)
 }
 
 
@@ -111,4 +158,15 @@ function simplized(cc) {
         }
     }
     return str
+}
+
+function copyData(data) {
+    const input = document.createElement('input')
+    input.setAttribute('readonly', 'readonly')
+    input.setAttribute('value', data)
+    document.body.appendChild(input)
+    input.setSelectionRange(0, 9999)
+    input.select()
+    document.execCommand('copy')
+    document.body.removeChild(input)
 }
