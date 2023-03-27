@@ -1,5 +1,12 @@
 const tipsJson = document.getElementById('tipsJson').data
 
+document.getElementById('tipsInput').addEventListener('keydown', event => {
+    if (event.code !== 'Enter') {
+        return
+    }
+    searchTips()
+})
+
 function tipsInit(clearInput) {
     let input = document.getElementById('tipsInput')
     if (clearInput) {
