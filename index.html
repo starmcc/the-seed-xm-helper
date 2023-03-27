@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheSeed联盟小梦助手</title>
+    <link type="text/css" rel="styleSheet" href="css/index.css">
+    </link>
+</head>
+
+<body>
+    <ul class="directory">
+        <li><a href="#h17" class="scroll-link">17层</a></li>
+        <li><a href="#h22" class="scroll-link">22层</a></li>
+        <li><a href="#h23" class="scroll-link">23层</a></li>
+        <li><a href="#h24" class="scroll-link">24层</a></li>
+        <li><a href="#h27" class="scroll-link">27层</a></li>
+        <li><a href="#h39" class="scroll-link">39层</a></li>
+        <li><a href="#h42" class="scroll-link">42层</a></li>
+    </ul>
+    <h1>作者：童年小梦</h1>
+    <h4>制作不易，请勿删除此行信息，小梦交流群：1063292221</h4>
+    <div class="img-container">
+        <div class="fullscreen-overlay">
+            <img class="fullscreen-img" src="">
+        </div>
+    </div>
+    <div>
+        <h3 id="h17">17层：带视野限制的沼泽</h3>
+        <img class="image" src="images/17.png"></img>
+    </div>
+    <div>
+        <h3 id="h22">22层：天空云朵</h3>
+        <img class="image" src="images/22.png"></img>
+    </div>
+    <div>
+        <h3 id="h23">23层：隐藏台阶</h3>
+        <img class="image" src="images/23.jpg"></img>
+    </div>
+    <div>
+        <h3 id="h24">24层：听歌识曲</h3>
+        <audio loop controls id="audio_bgm" src="bgm/1.mp3"></audio>
+        <div style="margin: 2px">
+            <button onclick="btnClick(1,this)">弓箭手村</button>
+            <button onclick="btnClick(2,this)">天空之城</button>
+            <button onclick="btnClick(3,this)">水世界</button>
+            <button onclick="btnClick(4,this)">水晶花園</button>
+            <button onclick="btnClick(5,this)">冰原雪域</button>
+        </div>
+        <div style="margin: 2px">
+            <button onclick="btnClick(6,this)">地球防衛總部</button>
+            <button onclick="btnClick(7,this)">尖耳狐狸村</button>
+            <button onclick="btnClick(8,this)">奇幻村</button>
+            <button onclick="btnClick(9,this)">玩具城</button>
+            <button onclick="btnClick(10,this)">勇士之村</button>
+        </div>
+        <div style="margin: 2px">
+            <button onclick="btnClick(11,this)">耶雷弗</button>
+            <button onclick="btnClick(12,this)">埃德爾斯坦</button>
+            <button onclick="btnClick(13,this)">桃花仙境</button>
+            <button onclick="btnClick(14,this)">神木村</button>
+            <button onclick="btnClick(15,this)">納希綠洲城</button>
+        </div>
+        <div style="margin: 2px">
+            <button onclick="btnClick(16,this)">童話村</button>
+            <button onclick="btnClick(17,this)">瑞恩村</button>
+            <button onclick="btnClick(18,this)">萬神殿</button>
+            <button onclick="btnClick(19,this)">瑪迦提亞城</button>
+            <button onclick="btnClick(20,this)">維多利亞港</button>
+        </div>
+        <div style="margin: 2px">
+            <button onclick="btnClick(21,this)">赫力席母奪回總部</button>
+            <button onclick="btnClick(22,this)">墮落城市</button>
+            <button onclick="btnClick(23,this)">魔法森林</button>
+            <button onclick="btnClick(24,this)">靈藥幻境</button>
+            <button onclick="btnClick(25,this)">櫻花處</button>
+        </div>
+        <div>
+            <h3 id="h27">27层：滿滿的陷阱</h3>
+            <img class="image" src="images/27.jpg"></img>
+        </div>
+        <div style="min-height: 300px;">
+            <h3 id="h39">39层：答题</h3>
+            <div>
+                <p style="font-size:8px; color: brown;">输入问题后Enter查询答案</p>
+                <p style="font-size:8px; color: brown;">可使用拼音首字母/简体/繁体搜索</p>
+                <div>
+                    问题：
+                    <input type="text" id="qName" style="margin-right: 1px;" />
+                    <button onclick="queryQa()">查询</button>
+                    <button onclick="qaInit(true)">清除</button>
+                </div>
+            </div>
+            <div id="qaData"></div>
+            <input type="hidden" id="qaJson" />
+        </div>
+        <div>
+            <h3 id="h42">42层：打小怪各30只</h3>
+            <img class="image" src="images/42.1.png"></img>
+            </br>
+            <img class="image" src="images/42.png"></img>
+        </div>
+    </div>
+
+</body>
+<script src="js/Convert_Pinyin.js"></script>
+<script src="js/init.js"></script>
+<script src="js/qa.js"></script>
+<script src="js/index.js"></script>
+
+</html>

@@ -1,0 +1,97 @@
+.audio_bgm {
+    display: none;
+}
+
+.image {
+    max-width: 300px;
+    transition: all 0.2s ease-in-out;
+}
+
+.image:hover {
+    transform: scale(1.1);
+    z-index: 999;
+    cursor: zoom-in;
+}
+
+.a_div {
+    display: inline-block;
+    margin: 3px 3px;
+    border: 1px dashed black;
+    border-radius: 5px;
+    padding: 0 8px;
+}
+
+
+.scroll-link,
+.scroll-link:active,
+.scroll-link:focus {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+
+
+.directory {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.directory li {
+    display: inline-block;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+
+}
+
+.directory li:hover {
+    background-color: #f9f9f9;
+}
+
+.directory li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.directory li a:hover {
+    color: #007bff;
+}
+
+
+
+.img-container {
+    position: relative;
+}
+
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fullscreen-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* 取消图片的默认边框 */
+img {
+    border: none;
+    outline: none;
+}
+
+/* 鼠标悬停在图片上时添加指针样式 */
+.img-container:hover {
+    cursor: pointer;
+}
