@@ -74,7 +74,7 @@ function qaInit(clearInput) {
     div.innerHTML = ''
     return {
         div,
-        value: traditionalized(input.value)
+        value: converter(input.value)
     }
 }
 
